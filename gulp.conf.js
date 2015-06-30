@@ -5,7 +5,7 @@ module.exports = {
 
     src: {
         main    : 'src',
-        styles  : 'src/styles/*.scss',
+        styles  : 'src/styles/*.styl',
         scripts : 'src/scripts/*.js',
         imgs    : 'src/imgs/*.{png,jpg,gif}',
         fonts   : 'src/fonts'

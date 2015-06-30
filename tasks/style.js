@@ -8,7 +8,7 @@
 var gulp = require('gulp'),
     config = require('../gulp.conf.js'),
     pkg = require('../package.json'),
-    sass = require('gulp-ruby-sass'),
+    stylus = require('gulp-stylus'),
     header = require('gulp-header'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
@@ -16,16 +16,9 @@ var gulp = require('gulp'),
 
 gulp.task(config.tasks.styles, function() {
     return gulp.src(config.src.styles)
-        .pipe(sass())
-        .pipe(banner())
+        .pipe(stylus())
+        .pipe(plumber())
         .pipe(gulp.dest(config.dist.styles));
-
-    // return gulp.src(config.src.styles)
-    //     .pipe(stylus({
-    //         use: ['nib']
-    //     }))
-    //     .pipe(plumber())
-    //     .pipe(gulp.dest(config.dist.styles));
 });
 
 gulp.task(config.tasks.cssmin, function() {
