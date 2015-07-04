@@ -1,3 +1,120 @@
-body {
-  background-color: #808080;
+* {
+  background: rgba(0,0,0,0.05);
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  width: 100%;
+  height: 100vh;
+}
+nav {
+  padding: 10px;
+  height: 20px;
+}
+nav ul {
+  list-style: none;
+  float: right;
+}
+nav li {
+  float: left;
+  margin: 0 1em;
+}
+nav .nav-item {
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.logo-wrap {
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 4em;
+}
+.logo-wrap:before,
+.logo-wrap:after {
+  content: '';
+  display: table;
+}
+.logo-wrap:after {
+  clear: both;
+}
+.logo-wrap h1 {
+  margin: 0;
+}
+.logo-wrap p {
+  margin: 0;
+  font-size: 2em;
+  text-align: center;
+}
+.header-tagline {
+  *zoom: 1;
+  width: auto;
+  max-width: 500px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.header-tagline:before,
+.header-tagline:after {
+  content: '';
+  display: table;
+}
+.header-tagline:after {
+  clear: both;
+}
+.header-tagline .tagline-color {
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: #f00;
+}
+.header-tagline .tagline-sub {
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  border-top: 2px solid #f3f3f3;
+}
+.scroll-button {
+  *zoom: 1;
+  width: auto;
+  max-width: 40px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.scroll-button:before,
+.scroll-button:after {
+  content: '';
+  display: table;
+}
+.scroll-button:after {
+  clear: both;
+}
+.scroll-button .btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: transparent;
 }
