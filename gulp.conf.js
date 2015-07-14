@@ -34,7 +34,7 @@ module.exports = {
         files: ['styles/*.css','scripts/*.js', 'public/*.html', 'public/imgs/*.{png,jpg,gif}'],
         server: {
             baseDir: 'public',
-            index: 'index.html'
+            index: 'inner_job.html'
         }
     }
 }

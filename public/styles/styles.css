@@ -1,7 +1,13 @@
+body {
+  font-family: Arial;
+  font-size: 16px;
+  margin: 0;
+}
 ul,
 li {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 a {
   text-decoration: none;
@@ -322,4 +328,118 @@ nav .nav-item {
 }
 .type-job:last-child {
   margin-right: 0%;
+}
+footer {
+  background-color: #333;
+  margin-top: 2em;
+  padding: 2em;
+}
+footer nav {
+  *zoom: 1;
+  width: auto;
+  max-width: 240px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  height: 90px;
+}
+footer nav:before,
+footer nav:after {
+  content: '';
+  display: table;
+}
+footer nav:after {
+  clear: both;
+}
+footer nav img {
+  width: 50px;
+}
+footer .copyright {
+  *zoom: 1;
+  width: auto;
+  max-width: 210px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  margin-top: 1em;
+  color: #fff;
+  font-size: 0.8em;
+}
+footer .copyright:before,
+footer .copyright:after {
+  content: '';
+  display: table;
+}
+footer .copyright:after {
+  clear: both;
+}
+footer .copyright p {
+  margin: 0;
+}
+.header-job-post {
+  height: 100%;
+  padding-bottom: 2em;
+}
+.header-job-post .logo-wrap {
+  margin-top: 2em;
+}
+.job-inner-title {
+  margin-top: 1em;
+  color: #414141;
+}
+.header-post-title .country-job {
+  text-align: left;
+  font-size: 1.3em;
+  color: #e34f26;
+  font-weight: normal;
+}
+.job-inner-header {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.list-share {
+  position: absolute;
+  right: 0;
+}
+.list-share li {
+  float: left;
+  margin: 0.5em;
+}
+.job-inner-info {
+  width: 100%;
+  float: left;
+  border-top: 1px solid #ccc;
+  margin-bottom: 2em;
+}
+.job-inner-info ul {
+  padding: 0.5em;
+}
+.job-inner-info li {
+  float: left;
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px solid #ccc;
+}
+.job-inner-info li:first-child {
+  padding-left: 0;
+  margin-left: 0;
+  border-left: none;
+}
+.job-inner-info .name-company {
+  color: #e34f26;
+}
+.job-inner-info .type-job {
+  width: auto;
+}
+.job-description {
+  width: 100%;
+  float: left;
 }
