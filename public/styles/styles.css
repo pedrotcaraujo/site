@@ -15,6 +15,44 @@ a {
 a:hover {
   text-decoration: underline;
 }
+.container {
+  *zoom: 1;
+  width: auto;
+  max-width: 70%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.container:before,
+.container:after {
+  content: '';
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+.container.job-form {
+  *zoom: 1;
+  width: auto;
+  max-width: 700px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.container.job-form:before,
+.container.job-form:after {
+  content: '';
+  display: table;
+}
+.container.job-form:after {
+  clear: both;
+}
 @font-face {
   font-family: 'fontello';
   src: url("../../fonts/fontello.eot?97317916");
@@ -63,6 +101,37 @@ a:hover {
   left: 4px;
   margin: 0;
   color: #fff;
+}
+.btn-group {
+  padding: 0.5em;
+}
+.btn {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  font-size: 0.9em;
+  position: relative;
+  outline: none;
+}
+.btn.btn-cancel {
+  background-color: #cb4e4d;
+  box-shadow: 0 4px #ab3c3c;
+  border-color: #ccc;
+  color: #fff;
+}
+.btn.btn-cancel:hover {
+  box-shadow: 0 2px #ab3c3c;
+  top: 2px;
+}
+.btn.btn-confirm {
+  background-color: #17aa56;
+  box-shadow: 0 4px #0e8c43;
+  color: #fff;
+}
+.btn.btn-confirm:hover {
+  box-shadow: 0 2px #0e8c43;
+  top: 2px;
 }
 header {
   width: 100%;
@@ -208,25 +277,6 @@ nav .nav-item {
 }
 .scroll-button .btn:hover {
   text-decoration: none;
-}
-.container {
-  *zoom: 1;
-  width: auto;
-  max-width: 70%;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-.container:before,
-.container:after {
-  content: '';
-  display: table;
-}
-.container:after {
-  clear: both;
 }
 .job-list-wrap {
   width: 100%;
@@ -442,4 +492,29 @@ footer .copyright p {
 .job-description {
   width: 100%;
   float: left;
+}
+.job-form-content fieldset {
+  border: none;
+  padding: 0.5em;
+  margin: 0;
+}
+.job-form-content label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.job-form-content input,
+.job-form-content select,
+.job-form-content textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.7em;
+  font-size: 0.8em;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+.job-form-content select {
+  width: 200px;
 }
