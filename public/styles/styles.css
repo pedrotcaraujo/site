@@ -116,22 +116,14 @@ a:hover {
 }
 .btn.btn-cancel {
   background-color: #cb4e4d;
-  box-shadow: 0 4px #ab3c3c;
-  border-color: #ccc;
   color: #fff;
-}
-.btn.btn-cancel:hover {
-  box-shadow: 0 2px #ab3c3c;
-  top: 2px;
 }
 .btn.btn-confirm {
   background-color: #17aa56;
-  box-shadow: 0 4px #0e8c43;
   color: #fff;
 }
-.btn.btn-confirm:hover {
-  box-shadow: 0 2px #0e8c43;
-  top: 2px;
+button[disabled] {
+  background-color: #dedede !important;
 }
 header {
   width: 100%;

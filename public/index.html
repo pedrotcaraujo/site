@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +11,17 @@
         <link rel="shortcut icon" type="image/x-icon" href="imgs/icon_frontjobs.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+        <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
         <link rel="stylesheet" href="styles/styles.css">
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="../bower_components/modernizr/modernizr.js"></script>
     </head>
-    <body>
+    <body ng-controller="frontJobsCtrl">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <main>
-            <header>
+            <header> 
                 <nav>
                     <ul>
                         <li>
@@ -105,31 +105,11 @@
                     <strong class="type-job">Full-Time</strong>
                 </article>
             </section>
-            <footer>
-              <nav>
-                  <ul>
-                      <li>
-                        <a class="nav-item" href="">Vagas</a>
-                      </li>
-                      <li>
-                        <a class="nav-item" href="#">
-                            <img src="imgs/logo_frontjobs.svg" alt="Logo FrontJobs">
-                        </a>
-                      </li>
-                      <li>
-                        <a class="nav-item" href="">About</a>
-                      </li>
-                  </ul>
-              </nav>
-              <div class="copyright">
-                <p>
-                  Copyright © 2015 FrontJobs
-                </p>
-              </div>
-            </footer>
+            <div ng-include="'footer.html'"></div>
         </main>
 
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+        <script src="../bower_components/angular/angular.js"></script>
 
         <!-- // <script src="scripts/main.js"></script> -->
     </body>

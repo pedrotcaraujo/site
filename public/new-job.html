@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" ng-app="app">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +15,11 @@
         <link rel="stylesheet" href="styles/styles.css">
         <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
-    <body>
+    <body ng-controller="frontJobsCtrl">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
 
         <main>
             <header class="header-job-post">
@@ -43,92 +44,101 @@
             </header>
             <section class="container job-form">
               <article class="job-inner-form">
+
+                  <article class="job-list-wrap" ng-repeat="job in jobs">
+                      <!-- <i class="icon">Icons</i> -->
+                      <div class="text-group">
+                          <a class="job-title" href="">{{job.titleJob}}</a>
+                          <span class="name-company">{{job.company}}</span>
+                      </div>
+                      <span class="country-job">São Paulo</span>
+                      <strong class="type-job">{{job.jobModality.modality}}</strong>
+                  </article>
                   <h1>Cadastrar Novo Job</h1>
                   <div class="job-form-content">
-                    <form action="">
+                    <form name="newJobForm">
                       <fieldset>
                         <label>Empresa</label>
-                        <input type="text" placeholder="Empresa S/A">
+                        <input type="text" ng-model="job.company" placeholder="Empresa S/A" ng-required="true">
                       </fieldset>
                       <fieldset>
                         <label>Site da empresa</label>
-                        <input type="text" placeholder="http://www.seusite.com.br">
+                        <input type="text" ng-model="job.website" placeholder="http://www.seusite.com.br" ng-required="true">
                       </fieldset>
                       <fieldset>
                         <label>Titulo da vaga</label>
-                        <input type="text" placeholder="Desenvolvedor Front End">
+                        <input type="text" ng-model="job.titleJob" placeholder="Desenvolvedor Front End" ng-required="true">
                       </fieldset>
                       <fieldset>
                         <label>Localização</label>
-                        <input type="text" placeholder="São Paulo - SP">
+                        <input type="text" ng-model="job.country" placeholder="São Paulo - SP" ng-required="true">
                       </fieldset>
                       <fieldset>
-                        <label>Empresa</label>
-                        <select name="" id="">
+                        <label>Modalidade do trabalho</label>
+                        <select ng-model="job.jobModality" ng-options="typeJob.modality for typeJob in jobModality" ng-required="true">
                           <option value="">Selecione uma opção</option>
-                          <option value="">Presencial</option>
-                          <option value="">Remoto</option>
-                          <option value="">Freela</option>
-                          <option value="">Trainee</option>
                         </select>
                       </fieldset>
                       <fieldset>
                         <label>E-mail para contato</label>
-                        <input type="text" placeholder="contato@empresa.com">
+                        <input type="text" ng-model="job.email" placeholder="contato@empresa.com" ng-required="true">
                       </fieldset>
                       <fieldset>
                         <label>Habilidades/Requerimentos</label>
-                        <textarea placeholder="Descreva as habilidades requeridas para se candidatar a vaga"></textarea>
+                        <textarea ng-model="job.hability" placeholder="Descreva as habilidades requeridas para se candidatar a vaga" ng-required="true"></textarea>
                       </fieldset>
                       <fieldset>
                         <label>Descrição</label>
-                        <input type="text" placeholder="Descrição da vaga">
+                        <input type="text" ng-model="job.description" placeholder="Descrição da vaga" ng-required="true">
                       </fieldset>
                       <fieldset>
                         <label>Salário</label>
-                        <select name="" id="">
-                          <option value="">N/A</option>
-                          <option value="">Abaixo de R$3.000</option>
-                          <option value="">R$3.000 - R$6.000</option>
-                          <option value="">R$6.000 - R$9.000</option>
-                          <option value="">Acima de R$9.000</option>
-                          <option value="">Valor hora a combinar</option>
+                        <select ng-model="job.jobSalary" ng-options="typeSalary.salary for typeSalary in jobSalary" ng-required="true">
+                          <option value="">Selecione uma opção</option>
                         </select>
                       </fieldset>
+                      <div class="btn-group">
+                        <button class="btn btn-cancel">Voltar</button>
+                        <button class="btn btn-confirm" ng-click="addNewJob(job)" ng-disabled="newJobForm.$invalid">Criar Job</button>
+                      </div>
                     </form>
-                    <div class="btn-group">
-                      <button class="btn btn-cancel">Voltar</button>
-                      <button class="btn btn-confirm">Criar Job</button>
-                    </div>
                   </div>
                 
               </article>
             </section>
-            <footer>
-              <nav>
-                  <ul>
-                      <li>
-                        <a class="nav-item" href="">Vagas</a>
-                      </li>
-                      <li>
-                        <a class="nav-item" href="#">
-                            <img src="imgs/logo_frontjobs.svg" alt="Logo FrontJobs">
-                        </a>
-                      </li>
-                      <li>
-                        <a class="nav-item" href="">About</a>
-                      </li>
-                  </ul>
-              </nav>
-              <div class="copyright">
-                <p>
-                  Copyright © 2015 FrontJobs
-                </p>
-              </div>
-            </footer>
+            <div ng-include="'footer.html'"></div>
         </main>
 
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script>
+          angular.module("app", []);
+          angular.module("app").controller('frontJobsCtrl', function($scope){
+            $scope.jobs = [
+              {company: "Google", website: "http://www.google.com", titleJob: "front end developer"},
+              {company: "Google", website: "http://www.google.com", titleJob: "front end developer"},
+              {company: "Google", website: "http://www.google.com", titleJob: "front end developer"}
+            ];
+            $scope.jobModality = [
+              {modality: "Presencial"},
+              {modality: "Remoto"},
+              {modality: "Freelancer"},
+              {modality: "Trainee"}
+            ];
+            $scope.jobSalary = [
+              {salary: "N/A"},
+              {salary: "Abaixo de R$3.000"},
+              {salary: "R$3.000 - R$6.000"},
+              {salary: "R$6.000 - R$9.000"},
+              {salary: "Acima de R$9.000"},
+              {salary: "Valor hora a combinar"}
+            ];
+            $scope.addNewJob = function (job) {
+              $scope.jobs.push(angular.copy(job));
+              delete $scope.job;
+            }
+          });
+        </script>
 
         <!-- // <script src="scripts/main.js"></script> -->
     </body>
