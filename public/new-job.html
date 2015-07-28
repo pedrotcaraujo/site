@@ -45,7 +45,7 @@
             <section class="container job-form">
               <article class="job-inner-form">
 
-                  <article class="job-list-wrap" ng-repeat="job in jobs">
+                  <article class="job-list-wrap" ng-repeat="job in nJobs">
                       <!-- <i class="icon">Icons</i> -->
                       <div class="text-group">
                           <a class="job-title" href="">{{job.titleJob}}</a>
@@ -106,39 +106,20 @@
                 
               </article>
             </section>
-            <div ng-include="'footer.html'"></div>
+            <div ng-include="'views/footer.html'"></div>
         </main>
 
         <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
         <script src="bower_components/angular/angular.js"></script>
-        <script>
-          angular.module("app", []);
-          angular.module("app").controller('frontJobsCtrl', function($scope){
-            $scope.jobs = [
-              {company: "Google", website: "http://www.google.com", titleJob: "front end developer"},
-              {company: "Google", website: "http://www.google.com", titleJob: "front end developer"},
-              {company: "Google", website: "http://www.google.com", titleJob: "front end developer"}
-            ];
-            $scope.jobModality = [
-              {modality: "Presencial"},
-              {modality: "Remoto"},
-              {modality: "Freelancer"},
-              {modality: "Trainee"}
-            ];
-            $scope.jobSalary = [
-              {salary: "N/A"},
-              {salary: "Abaixo de R$3.000"},
-              {salary: "R$3.000 - R$6.000"},
-              {salary: "R$6.000 - R$9.000"},
-              {salary: "Acima de R$9.000"},
-              {salary: "Valor hora a combinar"}
-            ];
-            $scope.addNewJob = function (job) {
-              $scope.jobs.push(angular.copy(job));
-              delete $scope.job;
-            }
-          });
-        </script>
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/frontJobsCtrl.js"></script>
+        <script src="scripts/services/jobsAPIServices.js"></script>
+
 
         <!-- // <script src="scripts/main.js"></script> -->
     </body>
