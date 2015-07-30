@@ -22,7 +22,7 @@
 
 
         <main>
-            <header class="header-job-post">
+            <!-- <header class="header-job-post">
                 <nav>
                     <ul>
                         <li>
@@ -41,71 +41,8 @@
                     </h1>
                     <p>Front Jobs</p>
                 </div>
-            </header>
-            <section class="container job-form">
-              <article class="job-inner-form">
-
-                  <article class="job-list-wrap" ng-repeat="job in nJobs">
-                      <!-- <i class="icon">Icons</i> -->
-                      <div class="text-group">
-                          <a class="job-title" href="">{{job.titleJob}}</a>
-                          <span class="name-company">{{job.company}}</span>
-                      </div>
-                      <span class="country-job">São Paulo</span>
-                      <strong class="type-job">{{job.jobModality.modality}}</strong>
-                  </article>
-                  <h1>Cadastrar Novo Job</h1>
-                  <div class="job-form-content">
-                    <form name="newJobForm">
-                      <fieldset>
-                        <label>Empresa</label>
-                        <input type="text" ng-model="job.company" placeholder="Empresa S/A" ng-required="true">
-                      </fieldset>
-                      <fieldset>
-                        <label>Site da empresa</label>
-                        <input type="text" ng-model="job.website" placeholder="http://www.seusite.com.br" ng-required="true">
-                      </fieldset>
-                      <fieldset>
-                        <label>Titulo da vaga</label>
-                        <input type="text" ng-model="job.titleJob" placeholder="Desenvolvedor Front End" ng-required="true">
-                      </fieldset>
-                      <fieldset>
-                        <label>Localização</label>
-                        <input type="text" ng-model="job.country" placeholder="São Paulo - SP" ng-required="true">
-                      </fieldset>
-                      <fieldset>
-                        <label>Modalidade do trabalho</label>
-                        <select ng-model="job.jobModality" ng-options="typeJob.modality for typeJob in jobModality" ng-required="true">
-                          <option value="">Selecione uma opção</option>
-                        </select>
-                      </fieldset>
-                      <fieldset>
-                        <label>E-mail para contato</label>
-                        <input type="text" ng-model="job.email" placeholder="contato@empresa.com" ng-required="true">
-                      </fieldset>
-                      <fieldset>
-                        <label>Habilidades/Requerimentos</label>
-                        <textarea ng-model="job.hability" placeholder="Descreva as habilidades requeridas para se candidatar a vaga" ng-required="true"></textarea>
-                      </fieldset>
-                      <fieldset>
-                        <label>Descrição</label>
-                        <input type="text" ng-model="job.description" placeholder="Descrição da vaga" ng-required="true">
-                      </fieldset>
-                      <fieldset>
-                        <label>Salário</label>
-                        <select ng-model="job.jobSalary" ng-options="typeSalary.salary for typeSalary in jobSalary" ng-required="true">
-                          <option value="">Selecione uma opção</option>
-                        </select>
-                      </fieldset>
-                      <div class="btn-group">
-                        <button class="btn btn-cancel">Voltar</button>
-                        <button class="btn btn-confirm" ng-click="addNewJob(job)" ng-disabled="newJobForm.$invalid">Criar Job</button>
-                      </div>
-                    </form>
-                  </div>
-                
-              </article>
-            </section>
+            </header> -->
+            
             <div ng-include="'views/footer.html'"></div>
         </main>
 
@@ -120,7 +57,5 @@
         <script src="scripts/controllers/frontJobsCtrl.js"></script>
         <script src="scripts/services/jobsAPIServices.js"></script>
 
-
-        <!-- // <script src="scripts/main.js"></script> -->
     </body>
 </html>

@@ -1,12 +1,6 @@
-angular.module("app").factory('jobsAPI', function($http){
-	var _getJobs = function () {
-		var data = new Firebase("https://frontjobs.firebaseio.com/jobs");
-  			// $scope.jobs = $firebaseObject(ref);
+angular.module("app").factory('jobsAPI', function($firebaseArray){
+	var ref = new Firebase("https://frontjobs.firebaseio.com");
 
-		return $http.get(data);
-	}
-
-	return {
-		getJobs: _getJobs
-	};
+	return $firebaseArray(ref);
+	
 });

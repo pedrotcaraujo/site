@@ -240,7 +240,7 @@ nav .nav-item {
 .scroll-button {
   *zoom: 1;
   width: auto;
-  max-width: 40px;
+  max-width: 75px;
   float: none;
   display: block;
   margin-right: auto;
@@ -402,7 +402,7 @@ footer nav img {
 footer .copyright {
   *zoom: 1;
   width: auto;
-  max-width: 210px;
+  max-width: 330px;
   float: none;
   display: block;
   margin-right: auto;
@@ -424,6 +424,10 @@ footer .copyright:after {
 }
 footer .copyright p {
   margin: 0;
+}
+footer .copyright p a {
+  font-weight: bold;
+  color: #fff;
 }
 .header-job-post {
   height: 100%;

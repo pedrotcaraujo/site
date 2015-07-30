@@ -1,0 +1,11 @@
+<section class="container">
+    <h1>Vagas</h1>
+    <article ng-repeat="job in jobs" class="job-list-wrap">
+        <div class="text-group">
+            <a class="job-title" href="">{{job.titleJob}}</a>
+            <span class="name-company">{{job.company}}</span>
+        </div>
+        <span class="country-job">{{job.country}}</span>
+        <strong class="type-job">{{job.jobModality.modality}}</strong>
+    </article>
+</section>

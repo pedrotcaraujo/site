@@ -11,11 +11,11 @@
         <link rel="shortcut icon" type="image/x-icon" href="imgs/icon_frontjobs.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
         <link rel="stylesheet" href="styles/styles.css">
-        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
-    <body ng-controller="frontJobsCtrl">
+    <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -45,72 +45,24 @@
                     <p class="tagline-sub">Se você ou sua empresa está precisando de um Front-end, anuncie sua vaga no FrontJobs</p>
                 </div>
                 <div class="scroll-button">
-                    <a class="btn icon-down-open-big" href=""></a>
+                    <a class="btn icon-down-open-big" href="#/newjob"></a>
                 </div>
             </header>
-            <section class="container">
-                <h1>Vagas</h1>
-                <article class="job-list-wrap">
-                    <!-- <i class="icon">Icons</i> -->
-                    <div class="text-group">
-                        <a class="job-title" href="">Name job</a>
-                        <span class="name-company">Name Company</span>
-                    </div>
-                    <span class="country-job">São Paulo</span>
-                    <strong class="type-job">Full-Time</strong>
-                </article>
-                <article class="job-list-wrap">
-                    <!-- <i class="icon">Icons</i> -->
-                    <div class="text-group">
-                        <a class="job-title" href="">Name job</a>
-                        <span class="name-company">Name Company</span>
-                    </div>
-                    <span class="country-job">São Paulo</span>
-                    <strong class="type-job">Full-Time</strong>
-                </article>
-                <article class="job-list-wrap">
-                    <!-- <i class="icon">Icons</i> -->
-                    <div class="text-group">
-                        <a class="job-title" href="">Name job</a>
-                        <span class="name-company">Name Company</span>
-                    </div>
-                    <span class="country-job">São Paulo</span>
-                    <strong class="type-job">Full-Time</strong>
-                </article>
-                <article class="job-list-wrap">
-                    <!-- <i class="icon">Icons</i> -->
-                    <div class="text-group">
-                        <a class="job-title" href="">Name job</a>
-                        <span class="name-company">Name Company</span>
-                    </div>
-                    <span class="country-job">São Paulo</span>
-                    <strong class="type-job">Full-Time</strong>
-                </article>
-                <article class="job-list-wrap">
-                    <!-- <i class="icon">Icons</i> -->
-                    <div class="text-group">
-                        <a class="job-title" href="">Name job</a>
-                        <span class="name-company">Name Company</span>
-                    </div>
-                    <span class="country-job">São Paulo</span>
-                    <strong class="type-job">Full-Time</strong>
-                </article>
-                <article class="job-list-wrap">
-                    <!-- <i class="icon">Icons</i> -->
-                    <div class="text-group">
-                        <a class="job-title" href="">Name job</a>
-                        <span class="name-company">Name Company</span>
-                    </div>
-                    <span class="country-job">São Paulo</span>
-                    <strong class="type-job">Full-Time</strong>
-                </article>
-            </section>
-            <div ng-include="'footer.html'"></div>
+            <div ng-view></div>
+            <div ng-include="'views/footer.html'"></div>
         </main>
 
         <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
-        <script src="../bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
 
-        <!-- // <script src="scripts/main.js"></script> -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/frontJobsCtrl.js"></script>
+        <script src="scripts/services/jobsAPIServices.js"></script>
+        <script src="scripts/routeConfig.js"></script>
     </body>
 </html>
