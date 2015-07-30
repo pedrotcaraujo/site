@@ -2,7 +2,7 @@ angular.module("app").config(function ($routeProvider) {
 	$routeProvider
 		.when("/", {
 			templateUrl: "views/list-jobs.html",
-			controller: "frontJobsCtrl"
+			controller: "listJobsCtrl"
 		})
 		.when("/newjob", {
 			templateUrl: "views/add-jobs.html",

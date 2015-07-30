@@ -1,13 +1,25 @@
-angular.module("app").controller('frontJobsCtrl', function($scope, jobsAPI, $location){
+angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
 
-  $scope.addNewJob = function() {
-    jobsAPI.$add({
-      company: $scope.company, 
-      titleJob: $scope.titleJob, 
-      country: $scope.country
-    });
-    $location.path("/");
-  };
+  // $scope.jobs = jobsAPI;
+
+  // var list = $firebaseArray(ref);
+  jobsAPI.$loaded()
+    .then(function(x) {
+      $scope.jobs = jobsAPI;
+  })
+    .catch(function(error) {
+      console.log("Error:", error);
+  });
+
+
+  // $scope.addNewJob = function() {
+  //   $scope.jobs.$add({
+  //     company: $scope.company, 
+  //     titleJob: $scope.titleJob, 
+  //     country: $scope.country
+  //   });
+  //   $scope.job = "";
+  // };
 
   // $scope.jobModality = [
   //   {modality: "Presencial"},
