@@ -3,14 +3,14 @@ angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
   jobsAPI.$loaded()
     .then(function() {
       $scope.jobs = jobsAPI;
-      $scope.loading = true;
+      $scope.loading = false;
   })
     .catch(function(error) {
       console.log("Error:", error);
   });
 
   // var test = new Firebase('https://frontjobs.firebaseio.com/' + jobsAPI.$id);
-  console.log(jobsAPI);
+
 
   // $scope.jobModality = [
   //   {modality: "Presencial"},

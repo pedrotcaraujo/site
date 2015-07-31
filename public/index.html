@@ -21,33 +21,7 @@
         <![endif]-->
 
         <main>
-            <header> 
-                <nav>
-                    <ul>
-                        <li>
-                            <a class="nav-item" href="">Vagas</a>
-                        </li>
-                        <li>
-                            <a class="nav-item" href="">About</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="logo-wrap">
-                    <h1>
-                        <a href="#/">
-                            <img src="imgs/logo_frontjobs.svg" alt="Logo FrontJobs">
-                        </a>
-                    </h1>
-                    <p>Front Jobs</p>
-                </div>
-                <div class="header-tagline">
-                    <p class="tagline-color">Procurando um Front-end?</p>
-                    <p class="tagline-sub">Se você ou sua empresa está precisando de um Front-end, anuncie sua vaga no FrontJobs</p>
-                </div>
-                <div class="scroll-button">
-                    <a class="btn" href="#/new">Anuncie uma vaga!</a>
-                </div>
-            </header>
+            <div ui-header></div>
             <div ng-view></div>
             <div ng-include="'views/footer.html'"></div>
         </main>
@@ -64,6 +38,7 @@
         <script src="scripts/controllers/frontJobsCtrl.js"></script>
         <script src="scripts/controllers/listJobsCtrl.js"></script>
         <script src="scripts/services/jobsAPIServices.js"></script>
+        <script src="scripts/directives/uiHeaderDirective.js"></script>
         <script src="scripts/routeConfig.js"></script>
     </body>
 </html>
