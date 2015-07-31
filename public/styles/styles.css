@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 body {
   font-family: Arial;
   font-size: 16px;
@@ -18,7 +23,7 @@ a:hover {
 .container {
   *zoom: 1;
   width: auto;
-  max-width: 70%;
+  max-width: 960px;
   float: none;
   display: block;
   margin-right: auto;
@@ -339,6 +344,8 @@ nav .nav-item {
   margin-left: 0%;
   margin-right: 3%;
   text-align: center;
+  float: right;
+  margin-right: 0;
 }
 .country-job:before,
 .country-job:after {

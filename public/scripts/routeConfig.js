@@ -2,12 +2,7 @@ angular.module("app").config(function ($routeProvider) {
 	$routeProvider
 		.when("/", {
 			templateUrl: "views/list-jobs.html",
-			controller: "listJobsCtrl",
-			resolve: {
-				jobs: function (jobsAPI) {
-					return jobsAPI.$loaded();
-				}
-			}
+			controller: "listJobsCtrl"
 		})
 		.when("/newjob", {
 			templateUrl: "views/add-jobs.html",
