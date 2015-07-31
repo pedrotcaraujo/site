@@ -453,6 +453,7 @@ footer .copyright p a {
   font-size: 1.3em;
   color: #e34f26;
   font-weight: normal;
+  float: left;
 }
 .job-inner-header {
   float: left;

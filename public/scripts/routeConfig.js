@@ -1,15 +1,15 @@
 angular.module("app").config(function ($routeProvider) {
 	$routeProvider
 		.when("/", {
-			templateUrl: "views/list-jobs.html",
+			templateUrl: "views/jobs/index.html",
 			controller: "listJobsCtrl"
 		})
-		.when("/newjob", {
-			templateUrl: "views/add-jobs.html",
+		.when("/new", {
+			templateUrl: "views/jobs/add-jobs.html",
 			controller: "frontJobsCtrl"
 		})
-		.when("/innerjob/:key", {
-			templateUrl: "views/inner-job.html"
+		.when("/show/:key", {
+			templateUrl: "views/jobs/show.html"
 		})
 		.otherwise({redirectTo: "/"});
 });
