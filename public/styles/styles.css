@@ -240,7 +240,7 @@ nav .nav-item {
 .scroll-button {
   *zoom: 1;
   width: auto;
-  max-width: 75px;
+  max-width: 155px;
   float: none;
   display: block;
   margin-right: auto;
@@ -259,15 +259,16 @@ nav .nav-item {
 }
 .scroll-button .btn {
   display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   border: 1px solid #ccc;
   background: transparent;
-  font-size: 1.9em;
-  color: #e34f26;
+  font-size: 1em;
+  color: #fff;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
 }
 .scroll-button .btn:hover {
+  background-color: #e34f26;
   text-decoration: none;
 }
 .job-list-wrap {

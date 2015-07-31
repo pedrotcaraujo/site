@@ -6,5 +6,8 @@
     "angular": "latest",
     "modernizr": "latest",
     "normalize.css": "latest"
+  },
+  "devDependencies": {
+    "angular-route": "~1.4.3"
   }
 }

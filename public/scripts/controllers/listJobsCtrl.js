@@ -1,25 +1,15 @@
 angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
 
-  // $scope.jobs = jobsAPI;
-
-  // var list = $firebaseArray(ref);
   jobsAPI.$loaded()
-    .then(function(x) {
+    .then(function() {
       $scope.jobs = jobsAPI;
   })
     .catch(function(error) {
       console.log("Error:", error);
   });
 
-
-  // $scope.addNewJob = function() {
-  //   $scope.jobs.$add({
-  //     company: $scope.company, 
-  //     titleJob: $scope.titleJob, 
-  //     country: $scope.country
-  //   });
-  //   $scope.job = "";
-  // };
+  // var test = new Firebase('https://frontjobs.firebaseio.com/' + jobsAPI.$id);
+  console.log(jobsAPI);
 
   // $scope.jobModality = [
   //   {modality: "Presencial"},
@@ -35,16 +25,5 @@ angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
   //   {salary: "Acima de R$9.000"},
   //   {salary: "Valor hora a combinar"}
   // ];
-  // $scope.addNewJob = function (job) {
-  //   $scope.jobs.push(angular.copy(job));
-  //   delete $scope.job;
-  // }
 
-  // var loadJobs = function () {
-  //   jobsAPI.success(function (data) {
-  //     $scope.nJobs = $firebaseObject(data);
-  //   });
-  // };
-
-  // loadJobs();
 });
