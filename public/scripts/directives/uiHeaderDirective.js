@@ -5,10 +5,13 @@ angular.module('app').directive('uiHeader', function() {
 		controller: controller
 	}
 
-	function controller ($location, $scope, $element, $attrs) {
-		$scope.isInnerJob = false;
-		if($location.path === "/new" || $location.path === "/show") {
-			$scope.isInnerJob = true;
-        }
-	}
+	function controller ($location, $rootScope, $scope, $element, $attrs) {
+		$scope.isInnerJob = true;
+
+  		$scope.$on("$routeChangeSuccess", function (event, current) {
+	        if(current.$$route.originalPath === "/") {
+				$scope.isInnerJob = false;
+        	}
+	    });
+    }
 });
