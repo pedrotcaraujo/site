@@ -1,5 +1,7 @@
 angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
+
   $scope.loading = true;
+
   jobsAPI.$loaded()
     .then(function() {
       $scope.jobs = jobsAPI;
@@ -9,6 +11,7 @@ angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
       console.log("Error:", error);
   });
 
+    
     // console.log(jobsAPI);
 
   // $scope.jobModality = [

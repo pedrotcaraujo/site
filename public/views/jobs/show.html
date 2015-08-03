@@ -2,14 +2,13 @@
   <article class="job-inner-wrap">
     <div class="job-inner-header">
       <div class="header-post-title">
-        {{jobsAPI}}
-        <h1 class="job-inner-title">{{$id.titleJob}}</h1>
+        <h1 class="job-inner-title">{{job.titleJob}}</h1>
         <h2 class="country-job">{{job.country}}</h2>
         <div class="job-inner-info">
           <ul>
-            <li class="date-post">Junho 23 2015</li>
+            <li class="date-post">{{job.timestamp | date: 'dd/MM/yyyy'}}</li>
             <li>
-              <a class="name-company" href="#">{{job.company}}</a>
+              <a class="name-company" ng-href="{{job.website}}">{{job.company}}</a>
             </li>
             <li class="type-job">Full-Time</li>
           </ul>

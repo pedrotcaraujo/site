@@ -1,9 +1,5 @@
 angular.module("app").controller('frontJobsCtrl', function($scope, jobsAPI, $location){
 
-  // console.log(jobsAPI);
-
-  $scope.jobs = jobsAPI;
-
   $scope.addNewJob = function() {
     jobsAPI.$add({
       company: $scope.company,

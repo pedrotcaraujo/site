@@ -5,12 +5,12 @@ angular.module("app").config(function ($routeProvider) {
 			controller: "listJobsCtrl"
 		})
 		.when("/new", {
-			templateUrl: "views/jobs/add-jobs.html",
+			templateUrl: "views/jobs/new.html",
 			controller: "frontJobsCtrl"
 		})
 		.when("/show/:key", {
 			templateUrl: "views/jobs/show.html",
-			controler: "listJobsCtrl"
+			controller: "showJobsCtrl"
 		})
 		.otherwise({redirectTo: "/"});
 });

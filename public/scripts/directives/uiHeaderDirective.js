@@ -6,11 +6,12 @@ angular.module('app').directive('uiHeader', function() {
 	}
 
 	function controller ($location, $rootScope, $scope, $element, $attrs) {
-		$scope.isInnerJob = true;
-
   		$scope.$on("$routeChangeSuccess", function (event, current) {
-	        if(current.$$route.originalPath === "/") {
+	        if(current && current.$$route.originalPath === "/") {
 				$scope.isInnerJob = false;
+        	}
+        	else {
+				$scope.isInnerJob = true;
         	}
 	    });
     }
