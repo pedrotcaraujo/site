@@ -9,8 +9,7 @@ angular.module("app").controller('listJobsCtrl', function($scope, jobsAPI){
       console.log("Error:", error);
   });
 
-  // var test = new Firebase('https://frontjobs.firebaseio.com/' + jobsAPI.$id);
-
+    // console.log(jobsAPI);
 
   // $scope.jobModality = [
   //   {modality: "Presencial"},

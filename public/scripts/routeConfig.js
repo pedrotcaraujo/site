@@ -9,7 +9,8 @@ angular.module("app").config(function ($routeProvider) {
 			controller: "frontJobsCtrl"
 		})
 		.when("/show/:key", {
-			templateUrl: "views/jobs/show.html"
+			templateUrl: "views/jobs/show.html",
+			controler: "listJobsCtrl"
 		})
 		.otherwise({redirectTo: "/"});
 });

@@ -1,10 +1,19 @@
 angular.module("app").controller('frontJobsCtrl', function($scope, jobsAPI, $location){
 
+  // console.log(jobsAPI);
+
+  $scope.jobs = jobsAPI;
+
   $scope.addNewJob = function() {
     jobsAPI.$add({
-      company: $scope.company, 
-      titleJob: $scope.titleJob, 
-      country: $scope.country
+      company: $scope.company,
+      website: $scope.website,
+      titleJob: $scope.titleJob,
+      country: $scope.country,
+      email: $scope.email,
+      hability: $scope.hability,
+      description: $scope.description,
+      timestamp: Firebase.ServerValue.TIMESTAMP
     });
     $location.path("/");
   };
@@ -23,16 +32,5 @@ angular.module("app").controller('frontJobsCtrl', function($scope, jobsAPI, $loc
   //   {salary: "Acima de R$9.000"},
   //   {salary: "Valor hora a combinar"}
   // ];
-  // $scope.addNewJob = function (job) {
-  //   $scope.jobs.push(angular.copy(job));
-  //   delete $scope.job;
-  // }
 
-  // var loadJobs = function () {
-  //   jobsAPI.success(function (data) {
-  //     $scope.nJobs = $firebaseObject(data);
-  //   });
-  // };
-
-  // loadJobs();
 });
