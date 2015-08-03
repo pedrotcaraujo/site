@@ -21,8 +21,13 @@
           </fieldset>
           <fieldset>
             <label>Modalidade do trabalho</label>
-            <select ng-model="jobModality" ng-options="typeJob.modality for typeJob in jobModality" ng-required="false">
-              <option value="">Selecione uma opção</option>
+            <select ng-model="jobModality"  ng-required="false">
+            <!-- <select ng-model="jobModality" ng-options="typeJob.modality for typeJob in jobModality" ng-required="false"> -->
+              <option>Selecione uma opção</option>
+              <option>Presencial</option>
+              <option>Remoto</option>
+              <option>Freelancer</option>
+              <option>Trainee</option>
             </select>
           </fieldset>
           <fieldset>
@@ -39,8 +44,15 @@
           </fieldset>
           <fieldset>
             <label>Salário</label>
-            <select ng-model="job.jobSalary" ng-options="typeSalary.salary for typeSalary in jobSalary" ng-required="false">
+            <select ng-model="jobSalary" ng-required="false">
+            <!-- <select ng-model="jobSalary" ng-options="typeSalary.salary for typeSalary in jobSalary" ng-required="false"> -->
               <option value="">Selecione uma opção</option>
+              <option value="">N/A</option>
+              <option value="">Abaixo de R$3.000</option>
+              <option value="">R$3.000 - R$6.000</option>
+              <option value="">R$6.000 - R$9.000</option>
+              <option value="">Acima de R$9.000</option>
+              <option value="">Valor hora a combinar</option>
             </select>
           </fieldset>
           <div class="btn-group">
