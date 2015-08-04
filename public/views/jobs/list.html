@@ -1,13 +1,10 @@
-<section class="container job-list-content">
+<section class="container">
     <h1>Vagas</h1>
-
-    <fieldset>
-        <input placeholder="Busca" type="text" ng-model="search">
-    </fieldset>
-
+	
 	<div ui-load></div>
 
-    <article ng-repeat="job in jobs | orderBy: 'timestamp' | filter: search" class="job-list-wrap">
+
+    <article ng-repeat="job in jobs | orderBy: 'timestamp'" class="job-list-wrap">
         <div class="text-group">
             <a class="job-title" ng-href="#/show/{{job.$id}}">{{job.titleJob}}</a>
             <span class="name-company">{{job.company}}</span>
