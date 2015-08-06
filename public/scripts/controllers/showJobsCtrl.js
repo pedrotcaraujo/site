@@ -1,7 +1,17 @@
-angular.module("app").controller('showJobsCtrl', function($scope, jobsAPI, $routeParams){
-  
-  var key = $routeParams.key;
-  
-  $scope.job = jobsAPI.$getRecord(key);
+(function() {
+	'use strict';
 
-});
+	angular
+		.module("app")
+		.controller('showJobsCtrl', ShowJobs);
+
+		ShowJobs.$inject= ['$scope', 'jobsAPI', '$routeParams'];
+
+			function ShowJobs($scope, jobsAPI, $routeParams){
+		  
+		  var key = $routeParams.key;
+		  
+		  $scope.job = jobsAPI.$getRecord(key);
+
+		};
+})();

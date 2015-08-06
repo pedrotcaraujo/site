@@ -1,20 +1,30 @@
-angular.module('app').directive('uiLoad', function() {
-	return {
-		restrict: 'A',
-		templateUrl: 'views/loading.html',
-		controller: controller
-	}
+(function() {
+  'use strict';
 
-	function controller ($scope, $element, $attrs) {
-  		$scope.$watch('loading', function (val) {
-			if (val) {
-				$scope.loading = true;
-			}
-			else {
-				$scope.loading = false;
-			}
-		
-		});
+	angular
+		.module('app')
+		.directive('uiLoad', UiLoad);
 
-    }
-});
+		UiLoad.$inject = ['$scope', '$element', '$attrs'];
+
+		function UiLoad() {
+
+			return {
+				restrict: 'A',
+				templateUrl: 'views/loading.html',
+				controller: controller,
+				link: function (scope, element, attrs) {
+		  	$scope.$watch('UiLoad', function (val) {
+					if (val) {
+						$scope.loading = true;
+					}
+					else {
+						$scope.loading = false;
+					}
+				});
+		  }
+			}
+
+		};
+
+})();
