@@ -20,7 +20,7 @@
         email: $scope.email,
         hability: $scope.hability,
         description: $scope.description,
-        jobSalary: $scope.typeSalary,
+        jobSalary: $scope.jobSalary,
         timestamp: Firebase.ServerValue.TIMESTAMP
       });
       $location.path("/");
