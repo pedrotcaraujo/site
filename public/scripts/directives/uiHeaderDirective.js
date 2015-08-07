@@ -5,8 +5,6 @@
 		.module('app')
 		.directive('uiHeader', UiHeader);
 
-		UiHeader.$infect = ['$location', '$rootScope', '$scope', '$element', '$attrs'];
-
 		function UiHeader() {
 			return {
 				restrict: 'A',

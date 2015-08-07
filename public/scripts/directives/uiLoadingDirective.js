@@ -5,16 +5,16 @@
 		.module('app')
 		.directive('uiLoad', UiLoad);
 
-		UiLoad.$inject = ['$scope', '$element', '$attrs'];
-
 		function UiLoad() {
 
 			return {
 				restrict: 'A',
 				templateUrl: 'views/loading.html',
-				controller: controller,
-				link: function (scope, element, attrs) {
-		  	$scope.$watch('UiLoad', function (val) {
+				controller: controller
+			}
+
+			function controller($scope, $element, $attrs) {
+		  	$scope.$watch('loading', function (val) {
 					if (val) {
 						$scope.loading = true;
 					}
@@ -23,7 +23,6 @@
 					}
 				});
 		  }
-			}
 
 		};
 
