@@ -4,29 +4,9 @@ header {
 	background: url('../imgs/workspace.jpg') no-repeat;
 	background-size: cover;
 }
-nav {
-	padding: 10px;
-	height: 20px;
-	ul {
-		list-style: none;
-		float: right;
-	}
-	li {
-		float: left;
-		margin: 0 1em;
-	}
-	.nav-item {
-		text-transform: uppercase;
-		font-size: .8em;
-		color: #fff;
-		text-shadow: 0px 1px 1px #000;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	.icon-github {
-		font-size: 1.5em;
-	}
+.header-job-post {
+  height: 100%;
+  padding-bottom: 2em;
 }
 .logo-wrap {
 	center(250px);
@@ -84,5 +64,23 @@ nav {
   			background-color: #E34F26;
   			text-decoration: none;
   		}
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.logo-wrap {
+		center(170px);
+		img {
+			center(140px);
+		}
+		p {
+			font-size: 1.5em;
+		}
+	}
+	.header-tagline {
+		center(290px);
+		.tagline-color {
+			font-size: 1.4em;
+		}
 	}
 }

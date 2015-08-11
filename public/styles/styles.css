@@ -23,7 +23,7 @@ a:hover {
 .container {
   *zoom: 1;
   width: auto;
-  max-width: 800px;
+  max-width: 700px;
   float: none;
   display: block;
   margin-right: auto;
@@ -37,25 +37,6 @@ a:hover {
   display: table;
 }
 .container:after {
-  clear: both;
-}
-.container.job-form {
-  *zoom: 1;
-  width: auto;
-  max-width: 700px;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-.container.job-form:before,
-.container.job-form:after {
-  content: '';
-  display: table;
-}
-.container.job-form:after {
   clear: both;
 }
 @font-face {
@@ -247,29 +228,9 @@ header {
   background: url("../imgs/workspace.jpg") no-repeat;
   background-size: cover;
 }
-nav {
-  padding: 10px;
-  height: 20px;
-}
-nav ul {
-  list-style: none;
-  float: right;
-}
-nav li {
-  float: left;
-  margin: 0 1em;
-}
-nav .nav-item {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  color: #fff;
-  text-shadow: 0px 1px 1px #000;
-}
-nav .nav-item:hover {
-  text-decoration: none;
-}
-nav .icon-github {
-  font-size: 1.5em;
+.header-job-post {
+  height: 100%;
+  padding-bottom: 2em;
 }
 .logo-wrap {
   *zoom: 1;
@@ -393,6 +354,71 @@ nav .icon-github {
   background-color: #e34f26;
   text-decoration: none;
 }
+@media screen and (max-width: 380px) {
+  .logo-wrap {
+    *zoom: 1;
+    width: auto;
+    max-width: 170px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .logo-wrap:before,
+  .logo-wrap:after {
+    content: '';
+    display: table;
+  }
+  .logo-wrap:after {
+    clear: both;
+  }
+  .logo-wrap img {
+    *zoom: 1;
+    width: auto;
+    max-width: 140px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .logo-wrap img:before,
+  .logo-wrap img:after {
+    content: '';
+    display: table;
+  }
+  .logo-wrap img:after {
+    clear: both;
+  }
+  .logo-wrap p {
+    font-size: 1.5em;
+  }
+  .header-tagline {
+    *zoom: 1;
+    width: auto;
+    max-width: 290px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-tagline:before,
+  .header-tagline:after {
+    content: '';
+    display: table;
+  }
+  .header-tagline:after {
+    clear: both;
+  }
+  .header-tagline .tagline-color {
+    font-size: 1.4em;
+  }
+}
 .job-list-content h1 {
   width: 100px;
   float: left;
@@ -505,11 +531,28 @@ nav .icon-github {
 .type-job:last-child {
   margin-right: 0%;
 }
+@media screen and (max-width: 380px) {
+  .job-list-content fieldset {
+    width: 100%;
+    margin: 0 0 1em;
+  }
+  .job-list-content h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.6em;
+  }
+  .job-list-content .type-job {
+    float: right;
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
 footer {
   position: relative;
   background-color: #333;
   margin-top: 2em;
-  padding: 2em 0;
+  padding: 2em 1em;
 }
 footer .logo {
   width: 40px;
@@ -517,11 +560,41 @@ footer .logo {
   float: left;
   margin-right: 1em;
 }
+@media screen and (max-width: 380px) {
+  footer .logo {
+    *zoom: 1;
+    width: auto;
+    max-width: 60px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  footer .logo:before,
+  footer .logo:after {
+    content: '';
+    display: table;
+  }
+  footer .logo:after {
+    clear: both;
+  }
+}
 footer .icon-github {
   float: right;
   color: #fff;
   font-size: 1.5em;
   margin-top: 8px;
+}
+@media screen and (max-width: 380px) {
+  footer .icon-github {
+    top: 15px;
+    position: relative;
+    left: 50%;
+    margin-left: -17px;
+    float: none;
+  }
 }
 footer .icon-github:hover {
   text-decoration: none;
@@ -532,8 +605,44 @@ footer .copyright {
   font-size: 0.8em;
   float: left;
 }
+@media screen and (max-width: 380px) {
+  footer .copyright {
+    *zoom: 1;
+    width: auto;
+    max-width: 161px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+  footer .copyright:before,
+  footer .copyright:after {
+    content: '';
+    display: table;
+  }
+  footer .copyright:after {
+    clear: both;
+  }
+}
 footer .copyright p {
   margin: 0;
+  float: left;
+}
+footer .copyright p:first-child {
+  border-right: 2px solid #fff;
+  padding-right: 5px;
+  margin-right: 5px;
+}
+@media screen and (max-width: 380px) {
+  footer .copyright p:first-child {
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    padding: 0 0 0.5em;
+    margin: 0 0 0.5em;
+  }
 }
 footer .copyright p a {
   font-weight: bold;
@@ -557,13 +666,6 @@ footer .footer-wrap:after {
 }
 footer .footer-wrap:after {
   clear: both;
-}
-.header-job-post {
-  height: 100%;
-  padding-bottom: 2em;
-}
-.header-job-post .logo-wrap {
-  margin-top: 2em;
 }
 .job-inner-title {
   margin-top: 1em;
@@ -618,4 +720,29 @@ footer .footer-wrap:after {
 .job-description {
   width: 100%;
   float: left;
+}
+@media screen and (max-width: 380px) {
+  .job-inner {
+    padding: 0 1em;
+  }
+  .job-inner-title {
+    text-align: center;
+  }
+  .job-inner-info li {
+    float: none;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    margin-bottom: 0.6em;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 380px) {
+  .job-inner-form h1 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+  .job-form-content form {
+    padding: 0 1em;
+  }
 }
