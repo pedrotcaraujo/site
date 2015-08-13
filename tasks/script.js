@@ -6,34 +6,26 @@
 *******************************************************************/
 
 var gulp = require('gulp'),
-    config = require('../gulp.conf.js'),
-    uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    stylish = require('jshint-stylish');
-
-// lint my custom js
-gulp.task(config.tasks.jslint, function() {
-    return gulp.src(config.src.scripts)
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(gulp.dest(config.dist.scripts));
-});
+	gulpif = require('gulp-if'),
+	uglify = require('gulp-uglify'),
+	jshint = require('gulp-jshint'),
+	concat = require('gulp-concat'),
+	stylish = require('jshint-stylish'),
+	config = require('../gulp.conf.js'),
+	rename = require('gulp-rename'),
+	plumber = require('gulp-plumber'),
+  ngAnnotate = require('gulp-ng-annotate'),
+	env = require('minimist')(process.argv.slice(2));
 
 // minify all js files that shold not be concatinated
-gulp.task(config.tasks.jsmin, function() {
-    return gulp.src(config.dist.scripts + 'main.js')
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(config.dist.scripts));
+gulp.task(config.tasks.jsmin, function () {
+	return gulp.src(config.src.scripts)
+		.pipe(plumber())
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'))
+  	.pipe(ngAnnotate({add: true, single_quotes: true}))
+    .pipe(concat('app.js'))
+		.pipe(gulpif(env.p,uglify()))
+		.pipe(gulpif(env.p,rename({suffix: '.min'})))
+		.pipe(gulp.dest('./public'));
 });
-
-// minify & concatinate all other js
-// gulp.task(config.tasks.jsconcat, function() {
-//     gulp.src(config.paths.js)
-//         .pipe(concat('all.min.js'))
-//         .pipe(uglify())
-//         .pipe(rename({suffix: '.min'}))
-//         .pipe(gulp.dest(config.pathsMin.js));
-// });
