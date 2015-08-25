@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module("app")
+    .module('app')
     .controller('frontJobsCtrl', NewJob);
 
   NewJob.$inject = ['$scope', 'jobsAPI', '$location'];
@@ -23,7 +23,7 @@
         jobSalary: $scope.typeSalary,
         timestamp: Firebase.ServerValue.TIMESTAMP
       });
-      $location.path("/");
+      $location.path('/');
     };
 
   };
