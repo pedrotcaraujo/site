@@ -2,32 +2,23 @@
   <article class="job-inner-wrap">
     <div class="job-inner-header">
       <div class="header-post-title">
-        <h1 class="job-inner-title" href="">Developer Front End Senior</h1>
-        <h2 class="country-job">São Paulo</h2>
+        <h1 class="job-inner-title">{{job.titleJob}}</h1>
+        <h2 class="country-job">{{job.country}}</h2>
         <div class="job-inner-info">
           <ul>
-            <li class="date-post">Junho 23 2015</li>
+            <li class="date-post">{{job.timestamp | date: 'dd/MM/yyyy'}}</li>
             <li>
-              <a class="name-company" href="#">Name Company</a>
+              <a class="name-company" ng-href="{{job.website}}">{{job.company}}</a>
             </li>
-            <li class="type-job">Full-Time</li>
+            <li class="type-job">{{job.jobModality}}</li>
           </ul>
         </div>
       </div>
-      <div class="list-share">
-        <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Linkedin</a></li>
-        </ul>
-      </div>
     </div>
     <section class="job-description">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <p>{{job.hability}}</p>
+      <p>{{job.description}}</p>
     </section>
   </article>
+  <a class="btn btn-default" href="#/">Voltar</a>
 </section>

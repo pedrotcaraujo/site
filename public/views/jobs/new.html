@@ -1,0 +1,63 @@
+<section class="container job-form">
+  <article class="job-inner-form">
+      <h1>Cadastrar Novo Job</h1>
+      <div class="job-form-content">
+        <form name="newJobForm">
+          <fieldset>
+            <label>Empresa</label>
+            <input type="text" ng-model="company" placeholder="Empresa S/A" ng-required="true">
+          </fieldset>
+          <fieldset>
+            <label>Site da empresa</label>
+            <input type="text" ng-model="website" placeholder="http://www.seusite.com.br" ng-required="true">
+          </fieldset>
+          <fieldset>
+            <label>Titulo da vaga</label>
+            <input type="text" ng-model="titleJob" placeholder="Desenvolvedor Front End" ng-required="true">
+          </fieldset>
+          <fieldset>
+            <label>Localização</label>
+            <input type="text" ng-model="country" placeholder="São Paulo - SP" ng-required="true">
+          </fieldset>
+          <fieldset>
+            <label>Modalidade do trabalho</label>
+            <select ng-model="jobModality"  ng-required="true">
+              <option value="">Selecione uma opção</option>
+              <option>Presencial</option>
+              <option>Remoto</option>
+              <option>Freelancer</option>
+              <option>Trainee</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label>E-mail para contato</label>
+            <input type="text" ng-model="email" placeholder="contato@empresa.com" ng-required="true">
+          </fieldset>
+          <fieldset>
+            <label>Habilidades/Requerimentos</label>
+            <textarea ng-model="hability" placeholder="Descreva as habilidades requeridas para se candidatar a vaga" ng-required="true"></textarea>
+          </fieldset>
+          <fieldset>
+            <label>Descrição</label>
+            <textarea type="text" ng-model="description" placeholder="Descrição da vaga" ng-required="true"></textarea>
+          </fieldset>
+          <fieldset>
+            <label>Salário</label>
+            <select ng-model="jobSalary" ng-required="true">
+              <option value="">Selecione uma opção</option>
+              <option>N/A</option>
+              <option>Abaixo de R$3.000</option>
+              <option>R$3.000 - R$6.000</option>
+              <option>R$6.000 - R$9.000</option>
+              <option>Acima de R$9.000</option>
+              <option>Valor hora a combinar</option>
+            </select>
+          </fieldset>
+          <div class="btn-group">
+            <a href="#/" class="btn btn-cancel">Voltar</a>
+            <button class="btn btn-confirm" ng-click="addNewJob()" ng-disabled="newJobForm.$invalid">Criar Job</button>
+          </div>
+        </form>
+      </div>
+  </article>
+</section>

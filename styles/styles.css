@@ -23,7 +23,7 @@ a:hover {
 .container {
   *zoom: 1;
   width: auto;
-  max-width: 960px;
+  max-width: 800px;
   float: none;
   display: block;
   margin-right: auto;
@@ -60,16 +60,10 @@ a:hover {
 }
 @font-face {
   font-family: 'fontello';
-  src: url("../../fonts/fontello.eot?97317916");
-  src: url("../../fonts/fontello.eot?97317916#iefix") format('embedded-opentype'), url("../../fonts/fontello.woff?97317916") format('woff'), url("../../fonts/fontello.ttf?97317916") format('truetype'), url("../../fonts/fontello.svg?97317916#fontello") format('svg');
+  src: url("../../fonts/fontello.eot?10584775");
+  src: url("../../fonts/fontello.eot?10584775#iefix") format('embedded-opentype'), url("../../fonts/fontello.woff?10584775") format('woff'), url("../../fonts/fontello.ttf?10584775") format('truetype'), url("../../fonts/fontello.svg?10584775#fontello") format('svg');
   font-weight: normal;
   font-style: normal;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  @font-face {
-    font-family: 'fontello';
-    src: url("../../fonts/fontello.svg?97317916#fontello") format('svg');
-  }
 }
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
@@ -99,13 +93,8 @@ a:hover {
 /* Uncomment for 3D effect */
 /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-.icon-down-open-big:before {
+.icon-github:before {
   content: '\e801';
-  position: relative;
-  top: 5px;
-  left: 4px;
-  margin: 0;
-  color: #fff;
 }
 .btn-group {
   padding: 0.5em;
@@ -119,6 +108,11 @@ a:hover {
   position: relative;
   outline: none;
 }
+.btn.btn-default {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #000;
+}
 .btn.btn-cancel {
   background-color: #cb4e4d;
   color: #fff;
@@ -129,6 +123,123 @@ a:hover {
 }
 button[disabled] {
   background-color: #dedede !important;
+}
+.spinner {
+  *zoom: 1;
+  width: auto;
+  max-width: 60px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+.spinner:before,
+.spinner:after {
+  content: '';
+  display: table;
+}
+.spinner:after {
+  clear: both;
+}
+.spinner-three-box {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ff7800;
+  text-indent: -9999px;
+  display: inline-block;
+  -webkit-animation: threeBounceDelay 1.4s infinite ease-in-out;
+  animation: threeBounceDelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.spinner-three-box.spinner-bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner-three-box.spinner-bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@-webkit-keyframes threeBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes threeBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes threeBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes threeBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes threeBounceDelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+fieldset {
+  border: none;
+  padding: 0.5em;
+  margin: 0;
+}
+label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.7em;
+  font-size: 0.8em;
+  width: 100%;
+  background-color: #f3f3f3;
+  outline: none;
+}
+select {
+  width: 200px;
 }
 header {
   width: 100%;
@@ -154,6 +265,12 @@ nav .nav-item {
   color: #fff;
   text-shadow: 0px 1px 1px #000;
 }
+nav .nav-item:hover {
+  text-decoration: none;
+}
+nav .icon-github {
+  font-size: 1.5em;
+}
 .logo-wrap {
   *zoom: 1;
   width: auto;
@@ -164,7 +281,7 @@ nav .nav-item {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  margin-top: 4em;
+  padding-top: 4em;
 }
 .logo-wrap:before,
 .logo-wrap:after {
@@ -236,13 +353,13 @@ nav .nav-item {
 }
 .header-tagline .tagline-sub {
   padding: 1em;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 0;
   border-top: 2px solid #f3f3f3;
   color: #fff;
   text-shadow: 0px 1px 1px #000;
 }
-.scroll-button {
+.new-job-button {
   *zoom: 1;
   width: auto;
   max-width: 155px;
@@ -254,15 +371,15 @@ nav .nav-item {
   padding-right: 0;
   margin-top: 20px;
 }
-.scroll-button:before,
-.scroll-button:after {
+.new-job-button:before,
+.new-job-button:after {
   content: '';
   display: table;
 }
-.scroll-button:after {
+.new-job-button:after {
   clear: both;
 }
-.scroll-button .btn {
+.new-job-button .btn {
   display: block;
   border: 1px solid #ccc;
   background: transparent;
@@ -272,9 +389,18 @@ nav .nav-item {
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
 }
-.scroll-button .btn:hover {
+.new-job-button .btn:hover {
   background-color: #e34f26;
   text-decoration: none;
+}
+.job-list-content h1 {
+  width: 100px;
+  float: left;
+}
+.job-list-content fieldset {
+  width: 300px;
+  float: right;
+  margin: 1em 0;
 }
 .job-list-wrap {
   width: 100%;
@@ -380,55 +506,31 @@ nav .nav-item {
   margin-right: 0%;
 }
 footer {
+  position: relative;
   background-color: #333;
   margin-top: 2em;
-  padding: 2em;
+  padding: 2em 0;
 }
-footer nav {
-  *zoom: 1;
-  width: auto;
-  max-width: 240px;
-  float: none;
+footer .logo {
+  width: 40px;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-  height: 90px;
+  float: left;
+  margin-right: 1em;
 }
-footer nav:before,
-footer nav:after {
-  content: '';
-  display: table;
+footer .icon-github {
+  float: right;
+  color: #fff;
+  font-size: 1.5em;
+  margin-top: 8px;
 }
-footer nav:after {
-  clear: both;
-}
-footer nav img {
-  width: 50px;
+footer .icon-github:hover {
+  text-decoration: none;
 }
 footer .copyright {
-  *zoom: 1;
-  width: auto;
-  max-width: 330px;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
   margin-top: 1em;
   color: #fff;
   font-size: 0.8em;
-}
-footer .copyright:before,
-footer .copyright:after {
-  content: '';
-  display: table;
-}
-footer .copyright:after {
-  clear: both;
+  float: left;
 }
 footer .copyright p {
   margin: 0;
@@ -436,6 +538,25 @@ footer .copyright p {
 footer .copyright p a {
   font-weight: bold;
   color: #fff;
+}
+footer .footer-wrap {
+  *zoom: 1;
+  width: auto;
+  max-width: 800px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+footer .footer-wrap:before,
+footer .footer-wrap:after {
+  content: '';
+  display: table;
+}
+footer .footer-wrap:after {
+  clear: both;
 }
 .header-job-post {
   height: 100%;
@@ -497,29 +618,4 @@ footer .copyright p a {
 .job-description {
   width: 100%;
   float: left;
-}
-.job-form-content fieldset {
-  border: none;
-  padding: 0.5em;
-  margin: 0;
-}
-.job-form-content label {
-  display: block;
-  width: 100%;
-  margin-bottom: 0.3em;
-  font-weight: bold;
-  font-size: 0.9em;
-}
-.job-form-content input,
-.job-form-content select,
-.job-form-content textarea {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0.7em;
-  font-size: 0.8em;
-  width: 100%;
-  background-color: #f3f3f3;
-}
-.job-form-content select {
-  width: 200px;
 }
