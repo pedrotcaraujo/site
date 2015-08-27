@@ -13,6 +13,16 @@ var gulp    = require('gulp'),
     concat  = require('gulp-concat'),
     stylish = require('jshint-stylish');
 
+
+// MINIFY AND CONCAT SCRIPTS
+gulp.task(config.tasks.jsmin, function() {
+  
+  return gulp.src('src/scripts/**/*.js')
+    .pipe(concat('app.js'))
+    // .pipe(uglify())
+    // .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(config.dist.scripts));
+});
 // LINT SCRIPTS
 gulp.task(config.tasks.jslint, function() {
 
@@ -21,13 +31,4 @@ gulp.task(config.tasks.jslint, function() {
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(gulp.dest(config.dist.scripts));
 
-});
-
-// MINIFY AND CONCAT SCRIPTS
-gulp.task(config.tasks.jsmin, function() {
-	
-  return gulp.src(config.src.scripts)
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(config.dist.scripts + 'app.js'));
 });

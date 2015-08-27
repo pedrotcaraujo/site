@@ -10,9 +10,9 @@
 				restrict: 'A',
 				templateUrl: 'views/header.html',
 				controller: controller
-			}
+			};
 
-			function controller ($location, $rootScope, $scope, $element, $attrs) {
+			function controller ($location, $rootScope, $scope) {
 		  		$scope.$on('$routeChangeSuccess', function (event, current) {
 			      if(current && current.$$route.originalPath === '/') {
 					  	$scope.isInnerJob = false;
@@ -22,6 +22,6 @@
 		        }
 			    });
 		    }
-		};
+		}
 
 })();

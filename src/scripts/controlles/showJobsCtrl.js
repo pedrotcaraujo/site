@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module("app")
+		.module('app')
 		.controller('showJobsCtrl', ShowJobs);
 
 		ShowJobs.$inject= ['$scope', 'jobsAPI', '$routeParams'];
@@ -13,5 +13,5 @@
 		  
 		  $scope.job = jobsAPI.$getRecord(key);
 
-		};
+		}
 })();

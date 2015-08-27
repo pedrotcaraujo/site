@@ -16,7 +16,7 @@ module.exports = {
 		main: 'public',
 		styles: 'public/styles/',
 		scripts: 'public/scripts/',
-		imgs: 'public/imgs/*',
+		imgs: 'public/imgs/',
 		fonts: 'public/fonts/'
 	},
 	tasks: {

@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module("app")
+		.module('app')
 		.controller('listJobsCtrl', ListJobs);
 
 		ListJobs.$inject = ['$scope', 'jobsAPI'];
@@ -17,8 +17,8 @@
 		      $scope.loading = false;
 		  })
 		    .catch(function(error) {
-		      console.log("Error:", error);
+		      console.log('Error:', error);
 		  });
-		};
+		}
 
 })();
