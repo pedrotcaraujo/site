@@ -7,7 +7,6 @@
 
   NewJob.$inject = ['$scope', 'jobsAPI', '$location'];
 
-
   function NewJob($scope, jobsAPI, $location) {
 
     $scope.addNewJob = function() {

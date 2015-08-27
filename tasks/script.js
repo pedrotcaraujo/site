@@ -19,8 +19,8 @@ gulp.task(config.tasks.jsmin, function() {
   
   return gulp.src('src/scripts/**/*.js')
     .pipe(concat('app.js'))
-    // .pipe(uglify())
-    // .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(config.dist.scripts));
 });
 // LINT SCRIPTS
