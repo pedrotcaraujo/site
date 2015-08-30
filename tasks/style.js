@@ -19,8 +19,17 @@ var gulp = require('gulp'),
 gulp.task(config.tasks.styles, function () {
 	return gulp.src(config.src.styles)
 		.pipe(plumber())
-		.pipe(stylus({compress: env.p}))
+		.pipe(stylus({compress: false}))
 		.pipe(gulp.dest(config.dist.styles));
+});
+
+
+gulp.task(config.tasks.cssmin, function () {
+	return gulp.src('styles/styles.css')
+		.pipe(plumber())
+		.pipe(minifycss({compatibility: 'ie9'}))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest('styles/'));
 });
 
 function banner() {

@@ -12,9 +12,9 @@ var gulp = require('gulp'),
 	requireDir = require('require-dir'),
 	dir = requireDir('./tasks');
 
-gulp.task('build', [config.tasks.styles, config.tasks.jsmin, config.tasks.imagemin]);
+gulp.task('build', [config.tasks.styles, config.tasks.cssmin, config.tasks.jsmin, config.tasks.imagemin]);
 
-gulp.task('start', [config.tasks.styles, config.tasks.jslint, config.tasks.browsersync]);
+gulp.task('start', [config.tasks.styles, config.tasks.cssmin, config.tasks.jslint, config.tasks.jsmin, config.tasks.browsersync]);
 
 gulp.task('default', ['start'], function () {
 	gulp.watch('src/styles/**/*.styl', [config.tasks.styles, reload]);
