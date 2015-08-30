@@ -13,11 +13,10 @@ module.exports = {
 
 	},
 	dist: {
-		main: 'public',
-		styles: 'public/styles/',
-		scripts: 'public/scripts/',
-		imgs: 'public/imgs/',
-		fonts: 'public/fonts/'
+		styles: 'styles/',
+		scripts: 'scripts/',
+		imgs: 'imgs/',
+		fonts: 'fonts/'
 	},
 	tasks: {
 		imagemin: 'imagemin',
@@ -33,9 +32,9 @@ module.exports = {
 		zip: 'zip'
 	},
 	syncConfig: {
-		files: ['styles/*.css', 'scripts/*.js', 'public/*.html', 'public/imgs/*.{png,jpg,gif}'],
+		files: ['styles/*.css', 'scripts/*.js', '/*.html', '/imgs/*.{png,jpg,gif}'],
 		server: {
-			baseDir: 'public',
+			baseDir: './',
 			index: 'index.html'
 		}
 	}

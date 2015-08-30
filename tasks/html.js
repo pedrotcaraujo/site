@@ -12,13 +12,13 @@ var gulp = require('gulp'),
 gulp.task('views', function () {
 	return gulp.src('src/views/**/*.html')
 		.pipe(gulpif(env.p,htmlmin({collapseWhitespace: true})))
-		.pipe(gulp.dest('./public/views'))
+		.pipe(gulp.dest('./views'))
 });
 
 gulp.task('index', function () {
 		gulp.src('src/index.html')
 	.pipe(gulpif(env.p,htmlmin({collapseWhitespace: true})))
-	.pipe(gulp.dest('./public'))
+	.pipe(gulp.dest('./'))
 });
 
 gulp.task(config.tasks.html, ['views', 'index'],function(){});
