@@ -1,6 +1,7 @@
 angular.module('app', ['firebase', 'ngRoute']);
 
-'use strict';
+(function() {
+  'use strict';
 
 angular
 	.module('app')
@@ -23,7 +24,83 @@ angular
 				controller: 'showJobsCtrl'
 			})
 			.otherwise({redirectTo: '/'});
-	};
+	}
+
+})();
+
+(function() {
+  'use strict';
+
+  angular
+    .module('app')
+    .controller('frontJobsCtrl', NewJob);
+
+  NewJob.$inject = ['$scope', 'jobsAPI', '$location'];
+
+  function NewJob($scope, jobsAPI, $location) {
+
+    $scope.addNewJob = function() {
+      jobsAPI.$add({
+        company: $scope.company,
+        website: $scope.website,
+        titleJob: $scope.titleJob,
+        country: $scope.country,
+        jobModality: $scope.jobModality,
+        email: $scope.email,
+        hability: $scope.hability,
+        description: $scope.description,
+        jobSalary: $scope.jobSalary,
+        timestamp: Firebase.ServerValue.TIMESTAMP
+      });
+      $location.path('/');
+    };
+
+  }
+
+})();
+
+(function() {
+	'use strict';
+
+	angular
+		.module('app')
+		.controller('listJobsCtrl', ListJobs);
+
+		ListJobs.$inject = ['$scope', 'jobsAPI'];
+
+		function ListJobs($scope, jobsAPI){
+
+		  $scope.loading = true;
+
+		  jobsAPI.$loaded()
+		    .then(function() {
+		      $scope.jobs = jobsAPI;
+		      $scope.loading = false;
+		  })
+		    .catch(function(error) {
+		      console.log('Error:', error);
+		  });
+		}
+
+})();
+
+(function() {
+	'use strict';
+
+	angular
+		.module('app')
+		.controller('showJobsCtrl', ShowJobs);
+
+		ShowJobs.$inject= ['$scope', 'jobsAPI', '$routeParams'];
+
+			function ShowJobs($scope, jobsAPI, $routeParams){
+		  
+		  var key = $routeParams.key;
+		  
+		  $scope.job = jobsAPI.$getRecord(key);
+
+		}
+})();
 
 (function() {
     'use strict';
@@ -98,79 +175,4 @@ angular
 			return $firebaseArray(ref);
 		}
 		
-})();
-
-(function() {
-  'use strict';
-
-  angular
-    .module('app')
-    .controller('frontJobsCtrl', NewJob);
-
-  NewJob.$inject = ['$scope', 'jobsAPI', '$location'];
-
-
-  function NewJob($scope, jobsAPI, $location) {
-
-    $scope.addNewJob = function() {
-      jobsAPI.$add({
-        company: $scope.company,
-        website: $scope.website,
-        titleJob: $scope.titleJob,
-        country: $scope.country,
-        jobModality: $scope.jobModality,
-        email: $scope.email,
-        hability: $scope.hability,
-        description: $scope.description,
-        jobSalary: $scope.typeSalary,
-        timestamp: Firebase.ServerValue.TIMESTAMP
-      });
-      $location.path('/');
-    };
-
-  }
-
-})();
-
-(function() {
-	'use strict';
-
-	angular
-		.module('app')
-		.controller('listJobsCtrl', ListJobs);
-
-		ListJobs.$inject = ['$scope', 'jobsAPI'];
-
-		function ListJobs($scope, jobsAPI){
-
-		  $scope.loading = true;
-
-		  jobsAPI.$loaded()
-		    .then(function() {
-		      $scope.jobs = jobsAPI;
-		      $scope.loading = false;
-		  })
-		    .catch(function(error) {
-		      console.log('Error:', error);
-		  });
-		}
-
-})();
-
-(function() {
-	'use strict';
-
-	angular
-		.module('app')
-		.controller('showJobsCtrl', ShowJobs);
-
-		ShowJobs.$inject= ['$scope', 'jobsAPI', '$routeParams'];
-
-			function ShowJobs($scope, jobsAPI, $routeParams){
-		  
-		  var key = $routeParams.key;
-		  
-		  $scope.job = jobsAPI.$getRecord(key);
-
-		}
 })();
