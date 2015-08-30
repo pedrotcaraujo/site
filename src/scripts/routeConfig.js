@@ -3,11 +3,11 @@
 
 angular
 	.module('app')
-	.config('routeConfig', RouteConfig);
+	.config(Config);
 
-	RouteConfig.$inject = ['$routeProvider'];
+	Config.$inject = ['$routeProvider'];
 
-	function RouteConfig($routeProvider) {
+	function Config($routeProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/jobs/index.html',
