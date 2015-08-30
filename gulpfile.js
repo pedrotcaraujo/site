@@ -12,16 +12,14 @@ var gulp = require('gulp'),
 	requireDir = require('require-dir'),
 	dir = requireDir('./tasks');
 
-gulp.task('build', [config.tasks.styles, config.tasks.jsmin, config.tasks.imagemin, config.tasks.zip]);
+gulp.task('build', [config.tasks.styles, config.tasks.jsmin, config.tasks.imagemin]);
 
-gulp.task('min', [config.tasks.jsmin]);
-
-gulp.task('start', [config.tasks.styles, config.tasks.html, config.tasks.jsmin, config.tasks.imagemin, config.tasks.browsersync]);
+gulp.task('start', [config.tasks.styles, config.tasks.jslint, config.tasks.browsersync]);
 
 gulp.task('default', ['start'], function () {
 	gulp.watch('src/styles/**/*.styl', [config.tasks.styles, reload]);
 	gulp.watch('src/scripts/*.js', [config.tasks.jsmin, reload]);
 	gulp.watch('src/imgs/*.{png,jpg,gif}', [config.tasks.imagemin, reload]);
 	gulp.watch('src/**/*.html', [config.tasks.html]);
-	gulp.watch('public/*.html', reload);
+	gulp.watch('./*.html', reload);
 });
