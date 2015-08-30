@@ -60,8 +60,8 @@ a:hover {
 }
 @font-face {
   font-family: 'fontello';
-  src: url("../fonts/fontello.eot?10584775");
-  src: url("../fonts/fontello.eot?10584775#iefix") format('embedded-opentype'), url("../fonts/fontello.woff?10584775") format('woff'), url("../fonts/fontello.ttf?10584775") format('truetype'), url("../fonts/fontello.svg?10584775#fontello") format('svg');
+  src: url("fonts/fontello.eot?10584775");
+  src: url("fonts/fontello.eot?10584775#iefix") format('embedded-opentype'), url("fonts/fontello.woff?10584775") format('woff'), url("fonts/fontello.ttf?10584775") format('truetype'), url("fonts/fontello.svg?10584775#fontello") format('svg');
   font-weight: normal;
   font-style: normal;
 }
