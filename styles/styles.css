@@ -618,6 +618,8 @@ footer .footer-wrap:after {
 .job-description {
   width: 100%;
   float: left;
+}
+.job-description-section {
   border-top: 1px solid #e34f26;
   padding: 15px 10px 10px;
   background-color: #ececec;
