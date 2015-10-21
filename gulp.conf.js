@@ -23,6 +23,7 @@ module.exports = {
 		jslint: 'jslint',
 		jsmin: 'jsmin',
 		jsconcat: 'jsconcat',
+        jscs: 'jscs',
 		styles: 'styles',
 		cssmin: 'cssmin',
 		cssconcat: 'cssconcat',
