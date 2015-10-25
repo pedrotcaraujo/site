@@ -1,17 +1,17 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.controller('showJobsCtrl', ShowJobs);
+    angular
+        .module('app')
+        .controller('showJobsCtrl', ShowJobs);
 
-		ShowJobs.$inject= ['$scope', 'jobsAPI', '$routeParams'];
+    ShowJobs.$inject = ['$scope', 'jobsAPI', '$routeParams'];
 
-			function ShowJobs($scope, jobsAPI, $routeParams){
-		  
-		  var key = $routeParams.key;
-		  
-		  $scope.job = jobsAPI.$getRecord(key);
+    function ShowJobs($scope, jobsAPI, $routeParams) {
 
-		}
+        var key = $routeParams.key;
+
+        $scope.job = jobsAPI.$getRecord(key);
+
+    }
 })();

@@ -1,27 +1,27 @@
 (function() {
     'use strict';
 
-	angular
-		.module('app')
-		.directive('uiHeader', UiHeader);
+    angular
+        .module('app')
+        .directive('uiHeader', UiHeader);
 
-		function UiHeader() {
-			return {
-				restrict: 'A',
-				templateUrl: 'views/header.html',
-				controller: controller
-			};
+    function UiHeader() {
+        return {
+            restrict: 'A',
+            templateUrl: 'views/header.html',
+            controller: controller
+        };
 
-			function controller ($location, $rootScope, $scope) {
-		  		$scope.$on('$routeChangeSuccess', function (event, current) {
-			      if(current && current.$$route.originalPath === '/') {
-					  	$scope.isInnerJob = false;
-		        }
-		        else {
-							$scope.isInnerJob = true;
-		        }
-			    });
-		    }
-		}
+        function controller ($location, $rootScope, $scope) {
+            $scope.$on('$routeChangeSuccess', function (event, current) {
+                if (current && current.$$route.originalPath === '/') {
+                    $scope.isInnerJob = false;
+                }
+                else {
+                    $scope.isInnerJob = true;
+                }
+            });
+        }
+    }
 
 })();

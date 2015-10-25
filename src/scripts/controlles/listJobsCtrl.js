@@ -1,24 +1,24 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.controller('listJobsCtrl', ListJobs);
+    angular
+        .module('app')
+        .controller('listJobsCtrl', ListJobs);
 
-		ListJobs.$inject = ['$scope', 'jobsAPI'];
+    ListJobs.$inject = ['$scope', 'jobsAPI'];
 
-		function ListJobs($scope, jobsAPI){
+    function ListJobs($scope, jobsAPI) {
 
-		  $scope.loading = true;
+        $scope.loading = true;
 
-		  jobsAPI.$loaded()
-		    .then(function() {
-		      $scope.jobs = jobsAPI;
-		      $scope.loading = false;
-		  })
-		    .catch(function(error) {
-		      console.log('Error:', error);
-		  });
-		}
+        jobsAPI.$loaded()
+            .then(function() {
+              $scope.jobs = jobsAPI;
+              $scope.loading = false;
+          })
+            .catch(function(error) {
+              console.log('Error:', error);
+          });
+    }
 
 })();

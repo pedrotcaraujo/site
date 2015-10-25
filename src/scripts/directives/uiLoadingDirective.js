@@ -1,29 +1,29 @@
 (function() {
-  'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.directive('uiLoad', UiLoad);
+    angular
+        .module('app')
+        .directive('uiLoad', UiLoad);
 
-		function UiLoad() {
+    function UiLoad() {
 
-			return {
-				restrict: 'A',
-				templateUrl: 'views/loading.html',
-				controller: controller
-			};
+        return {
+                restrict: 'A',
+                templateUrl: 'views/loading.html',
+                controller: controller
+            };
 
-			function controller($scope) {
-		  	$scope.$watch('loading', function (val) {
-					if (val) {
-						$scope.loading = true;
-					}
-					else {
-						$scope.loading = false;
-					}
-				});
-		  }
+        function controller($scope) {
+            $scope.$watch('loading', function (val) {
+                    if (val) {
+                        $scope.loading = true;
+                    }
+                    else {
+                        $scope.loading = false;
+                    }
+                });
+        }
 
-		}
+    }
 
 })();
