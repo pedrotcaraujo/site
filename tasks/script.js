@@ -38,7 +38,8 @@ gulp.task(config.tasks.jscs, function() {
 
     return gulp.src(config.src.scripts)
         .pipe(jscs())
-        .pipe(jscs.reporter());
+        .pipe(jscs.reporter())
+        .pipe(jscs.reporter('fail'));
 
 });
 
