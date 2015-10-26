@@ -1,0 +1,9 @@
+before_script:
+    - npm install -g bower
+    - npm install -g gulp
+    - npm install
+    - bower install
+script:
+    -  gulp jscs
+    -  gulp jslint
+    -  gulp test
